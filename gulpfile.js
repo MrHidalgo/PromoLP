@@ -47,7 +47,7 @@ gulp.task( 'build-scss', function () {
 		// .pipe( concat( 'styles.min.css' ) )
 		.pipe( gulp.dest( DEST_CSS ) )
 		.pipe( browsersync.stream() )
-		.pipe( notify( '### Finished Building SCSS ###' ) );
+		// .pipe( notify( '### Finished Building SCSS ###' ) );
 
 } );
 
@@ -63,7 +63,7 @@ gulp.task( 'build-js', function () {
 		// .pipe( concat( 'scripts.min.js' ) )
 		.pipe( gulp.dest( DEST_JS ) )
 		.pipe( browsersync.stream() )
-		.pipe( notify( '### Finished Building JS ###' ) );
+		// .pipe( notify( '### Finished Building JS ###' ) );
 
 } );
 

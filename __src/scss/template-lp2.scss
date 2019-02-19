@@ -1,0 +1,249 @@
+/**
+ * Template: Landing page
+ */
+@import 'utils/all';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.lp {
+  height: 100%;
+
+  &-cover {
+    overflow: hidden;
+    height: 100%;
+    max-height: 100vh;
+    background-color: #fff;
+
+    &-bg {
+      z-index: -0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/templates/lp2/img-lpCover-bg.svg');
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
+
+    &-container {
+      z-index: 2;
+      position: relative;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &-content {
+      display: flex;
+
+      &-left,
+      &-right {
+        width: 50%;
+      }
+
+      &-left {
+        display: flex;
+        flex-direction: column;
+        padding-top: 75px;
+        padding-left: 75px;
+      }
+
+      &-right {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-logo {
+      padding-bottom: 91px;
+    }
+
+    &-title {
+      margin: 0;
+      padding-bottom: 34px;
+      color: #000000;
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: 0.43px;
+      line-height: 88px;
+    }
+
+    &-subtitle {
+      margin: 0;
+      padding-bottom: 58px;
+      color: #000000;
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 54px;
+    }
+
+    &-form {
+      width: 100%;
+      max-width: 588px;
+      padding-bottom: 58px;
+
+      &-group {
+        display: flex;
+        align-items: center;
+      }
+
+      &-field {
+        &--input {
+          flex: 1;
+          min-width: 1px;
+          max-width: 100%;
+
+          input {
+            outline: none;
+            height: 58px;
+            width: 100%;
+            padding: 0 32px;
+            border: 1px solid #979797;
+            border-radius: 35.5px;
+            background-color: #FFFFFF;
+            text-transform: lowercase;
+
+            &::placeholder {
+              color: #BCBCBC;
+              font-size: 20px;
+              font-weight: 500;
+            }
+          }
+        }
+
+        &--btn {
+          display: flex;
+          justify-content: flex-end;
+          width: 218px;
+
+          button {
+            width: 196px;
+          }
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding-bottom: 22px;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+
+        > div {
+          &:nth-of-type(1) {
+            width: 38px;
+          }
+
+          &:nth-of-type(2) {
+            flex: 1;
+            min-width: 1px;
+            max-width: 100%;
+          }
+        }
+
+        p {
+          position: relative;
+          top: 2px;
+          margin: 0;
+          color: #000000;
+          font-size: 30px;
+          line-height: 1;
+        }
+
+        span {
+          position: relative;
+          display: flex;
+          height: 29px;
+          width: 29px;
+          border-radius: 100%;
+          border: 2px solid #FF4070;
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 13px;
+            left: 6px;
+            height: 13px;
+            width: 7px;
+            border-right: 2px solid #FF4070;
+            border-top: 2px solid #FF4070;
+            transform-origin: left top;
+            transform: scaleX(-1) rotate(135deg);
+          }
+        }
+      }
+    }
+
+    &-video {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 47.6%;
+      max-width: 768px;
+      min-width: 45.7vw;
+      font-size: 10px;
+
+      .lp-cover-video-mobile {
+        display: none;
+      }
+
+      .lp-cover-video-popup-link {
+        line-height: normal;
+        font-size: 15px;
+        letter-spacing: 0.5625px;
+        color: $color-black;
+        font-weight: 500;
+        margin-left: -94px;
+        z-index: 1;
+
+        &:before {
+          content: '';
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          background-image: url('../images/templates/lp1/play.svg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-bottom: -6px;
+          margin-right: 10px;
+        }
+      }
+
+      .lp-cover-video-wrapper {
+        margin-bottom: -40px;
+        position: relative;
+        width: 76.8em;
+
+        img {
+          width: 100%;
+          vertical-align: middle;
+        }
+
+        video {
+          vertical-align: middle;
+          font-size: inherit;
+          position: absolute;
+          width: 50.0em;
+          height: 35.1em;
+          left: 8.7em;
+          top: 3.4em;
+        }
+      }
+    }
+  }
+}
