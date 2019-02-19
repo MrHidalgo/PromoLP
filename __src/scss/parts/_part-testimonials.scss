@@ -1,0 +1,212 @@
+/*====================================
+=            Testimonials            =
+====================================*/
+.lp-testimonials {
+  background-image: url('../images/templates/lp1/testimonials-bg.svg');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: $color-pink-lp;
+  padding: 26px 0 80px;
+
+  @media (max-width: 767px) {
+    background-image: url('../images/templates/lp1/testimonials-bg-mobile.svg');
+    padding-bottom: 78px;
+  }
+
+  .lp-testimonials-container {
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 991px) {
+      width: 600px;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  .lp-testimonials-title {
+    line-height: 1.08;
+    font-size: 25px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
+  }
+
+  .lp-testimonials-subtitle {
+    line-height: 1;
+    font-size: 43px;
+    letter-spacing: 1px;
+    color: $color-white;
+    margin-top: 26px;
+    margin-bottom: 52px;
+
+    @media (max-width: 1199px) {
+      font-size: 36px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 22px;
+      text-align: center;
+      line-height: 29px;
+      width: 250px;
+      margin-top: 38px;
+      margin-bottom: 59px;
+    }
+  }
+
+  .lp-testimonials-number {
+    line-height: 0.7513;
+    font-size: 181px;
+    text-align: center;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.25);
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 5px;
+
+    @media (max-width: 1199px) {
+      font-size: 160px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 130px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 84px;
+    }
+  }
+
+  .lp-testimonials-slider {
+    position: relative;
+    width: 100%;
+    display: none;
+
+    @media (max-width: 767px) {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .slick-slide {
+      margin: 0 15px;
+    }
+
+    &:before {
+      content: '';
+      width: 30px;
+      height: 20px;
+      background-image: url('../images/templates/lp1/quotes.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 50%;
+      margin-left: -15px;
+      top: -34px;
+    }
+
+    .lp-testimonials-quote {
+      line-height: 1.615;
+      font-size: 26px;
+      text-align: center;
+      font-weight: 300;
+      color: $color-white;
+      display: inherit;
+      margin-bottom: 21px;
+
+      &:before,
+      &:after {
+        content: none;
+      }
+
+      @media (max-width: 1199px) {
+        font-size: 22px;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 19px;
+        line-height: 28px;
+        margin-bottom: 38px;
+      }
+
+    }
+
+    .lp-testimonials-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+        vertical-align: middle;
+      }
+
+      @media (max-width: 767px) {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    .lp-testimonials-name {
+      line-height: normal;
+      font-size: 18px;
+      text-align: center;
+      color: $color-white;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-top: 19px;
+      margin-bottom: 0;
+
+      @media (max-width: 767px) {
+        margin-top: 17px;
+        font-size: 15px;
+      }
+    }
+
+    .lp-testimonials-role {
+      line-height: normal;
+      font-size: 18px;
+      text-align: center;
+      color: $color-white;
+      font-weight: 300;
+      margin-top: 9px;
+      margin-bottom: 0;
+      letter-spacing: 0.15px;
+
+      @media (max-width: 767px) {
+        font-size: 15px;
+        margin-top: 8px;
+      }
+    }
+
+    .lp-testimonials-slide {
+      text-align: center;
+    }
+  }
+}
+
+
+/*=====  End of Testimonials  ======*/

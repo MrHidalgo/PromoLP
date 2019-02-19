@@ -1,0 +1,115 @@
+/*===================================
+=            Images grid            =
+===================================*/
+
+.lp-imagesGrid {
+  padding: 71px 0 40px;
+
+  @media (max-width: 767px) {
+    padding: 47px 0 21px;
+  }
+
+  .lp-imagesGrid-container {
+    width: 100%;
+
+    @media (min-width: 1441px) {
+      max-width: 1680px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (max-width: 767px) {
+      padding-left: 4px;
+      padding-right: 4px;
+      max-width: 375px;
+    }
+  }
+
+  .lp-imagesGrid-title {
+    line-height: normal;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: $color-black;
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    @media (max-width: 1199px) {
+      font-size: 34px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 18px;
+    }
+  }
+
+  .lp-imagesGrid-text {
+    line-height: 1.4;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.42px;
+    max-width: 616px;
+    margin: 0 auto 68px;
+
+    @media (max-width: 1199px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 767px) {
+      line-height: 28px;
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 0.42px;
+      max-width: 310px;
+      margin: 0 auto 15px;
+    }
+  }
+
+  .lp-imagesGrid-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap;
+
+    .lp-imagesGrid-image {
+      flex-basis: calc(25% - 15px);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 20px;
+
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      @media (max-width: 991px) {
+        flex-basis: calc(25% - 12px);
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 767px) {
+        flex-basis: calc(25% - 3px);
+        margin-bottom: 4px;
+      }
+    }
+  }
+}
+
+/*=====  End of Images grid  ======*/
+

@@ -1,0 +1,179 @@
+/*=================================
+=            Templates            =
+=================================*/
+.lp-templates {
+  background-color: $color-grey-lp-bg;
+  padding: 71px 0 54px;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    padding: 49px 0 43px;
+  }
+
+  .lp-templates-container {
+    @media (min-width: 1200px) {
+      width: 1035px;
+    }
+  }
+
+  .lp-templates-title {
+    line-height: 1.4;
+    font-size: 40px;
+    text-align: center;
+    color: $color-black;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 67px;
+
+    @media (max-width: 1199px) {
+      font-size: 34px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+      margin-bottom: 38px;
+      margin: 0 auto 38px;
+      max-width: 100%;
+      width: 375px;
+    }
+  }
+
+  .lp-templates-slider {
+    height: 348px;
+    margin-bottom: 57px;
+    overflow: hidden;
+    display: none;
+
+    @media (max-width: 767px) {
+      margin-bottom: 35px;
+    }
+
+    .slick-track {
+      margin-left: -5px;
+    }
+
+    .slick-slide {
+      margin: 0 5px;
+      outline: none;
+    }
+
+    .slick-arrow {
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.8);
+      top: 123px;
+      position: absolute;
+      z-index: 1;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: rgba(255,255,255,1);
+      }
+
+      &.slick-prev {
+        left: 0;
+        border-top-right-radius: 5.72px;
+        border-bottom-right-radius: 5.72px;
+        background-image: url('../images/templates/lp1/arrow-left.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media (max-width: 767px) {
+          left: -10px;
+        }
+      }
+
+      &.slick-next {
+        right: 0;
+        border-top-left-radius: 5.72px;
+        border-bottom-left-radius: 5.72px;
+        background-image: url('../images/templates/lp1/arrow-right.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media (max-width: 767px) {
+          right: -10px;
+        }
+      }
+    }
+
+    .lp-templates-slide {
+      height: 348px;
+      display: block;
+      outline: none;
+
+      .lp-templates-slide-image {
+        height: 310px;
+        overflow: hidden;
+        box-shadow: 0px 3px 35px rgba(0, 0, 0, 0.117867);
+        border-radius: 5.148px;
+        position: relative;
+        background-color: #fff;
+        z-index: 1;
+
+        .lp-templates-slide-video {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        img {
+          height: 100%;
+          width: auto;
+          opacity: 1;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        &.hide-image {
+          img {
+            &:hover {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      .lp-templates-slide-title {
+        font-family: Wes FY;
+        line-height: 1.4;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0.42px;
+        font-weight: 400;
+        margin-top: 13px;
+        margin-bottom: 0;
+        color: $color-black;
+
+        @media (max-width: 1199px) {
+          font-size: 18px;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+          line-height: 28px;
+          margin-top: 11px;
+        }
+      }
+    }
+  }
+}
+
+/*=====  End of Templates  ======*/

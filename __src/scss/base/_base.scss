@@ -1,0 +1,78 @@
+html, body, input, select, button, textarea {
+  font-family: $font-wes;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+input, select, button, textarea {
+  .rtl & {
+    font-family: $font-hebrew;
+  }
+}
+
+body {
+  &.rtl {
+    direction: rtl;
+    font-family: $font-hebrew;
+  }
+}
+
+a {
+  color: $color-black;
+  text-decoration: none;
+  transition: .25s;
+  &:hover {
+    color: $color-black;
+  }
+}
+
+.sr-only, .screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.lity-close {
+  position: absolute;
+  background-color: $color-pink-lp;
+  border-radius: 50%;
+  top: -18px;
+  right: -18px;
+  transition: background 0.2s ease-in-out;
+  text-shadow: none !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba(255, 51, 102, 0.85);
+    top: -18px;
+  }
+
+  @media (max-width: 1199px) {
+    right: 0;
+    top: -35px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(255, 51, 102, 0.85);
+      top: -35px;
+    }
+  }
+}
+
+
+
+
+.visible-xs {
+  @media (min-width: 768px) { display: none !important; }
+}
+.hidden-xs {
+  @media (max-width: 767px) { display: none !important; }
+}

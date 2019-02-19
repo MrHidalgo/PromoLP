@@ -1,0 +1,39 @@
+/**
+ * Main
+ */
+
+
+/* Utils */
+@import 'utils/all';
+
+
+/* Vendors */
+@import 'vendors/normalize';
+@import 'vendors/grid12';
+@import 'vendors/slick';
+@import 'vendors/lity';
+@import 'vendors/jquery.fancybox';
+
+
+/* Base (like reset, typography, animations) */
+@import 'base/base';
+@import 'base/font-wes';
+@import 'base/slick-theme';
+
+
+/* Components (components like boxes, general elements) */
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/section';
+
+
+/* Parts (parts like for sections) */
+@import 'parts/part-cta';
+@import 'parts/part-testimonials';
+@import 'parts/part-images_grid';
+@import 'parts/part-templates';
+@import 'parts/part-logos';
+@import 'parts/part-imageAndTextCentered';
+@import 'parts/part-imagesAndTexts';
+
+/* Templates */

@@ -1,0 +1,84 @@
+/*=============================
+=            Logos            =
+=============================*/
+
+.lp-logos {
+  padding: 21px 0 15px;
+
+  @media (max-width: 767px) {
+    padding: 46px 0 5px;
+  }
+
+  .lp-logos-container {
+    @media (min-width: 1200px) {
+      width: 1030px;
+    }
+  }
+
+  .lp-logos-title {
+    display: none;
+
+    @media (max-width: 767px) {
+      display: block;
+      line-height: normal;
+      font-size: 18px;
+      text-align: center;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: 42px;
+    }
+  }
+
+  .lp-logos-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      img {
+        height: 50px;
+      }
+
+      .lp-logos-logo {
+        &:last-child {
+          img {
+            height: 90px;
+          }
+        }
+      }
+    }
+
+
+    @media (max-width: 767px) {
+      flex-flow: wrap;
+      max-width: 290px;
+      margin: 0 auto;
+
+      .lp-logos-logo {
+        display: flex;
+        flex-direction: column;
+        width: 42%;
+        align-items: flex-start;
+        margin-bottom: 38px;
+
+        img {
+          height: 45px;
+        }
+
+        &:last-child {
+          align-items: center;
+          img {
+            height: 70px;
+          }
+        }
+
+        &:nth-child(2) {
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}
+
+/*=====  End of Logos  ======*/

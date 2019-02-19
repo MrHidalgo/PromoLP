@@ -1,0 +1,423 @@
+// Buttons
+
+/*
+  Usage: 'btn-<TYPE>-<COLOR> btn-<SIZE> btn-text-<COLOR>(optional) btn-bg-<COLOR>(optional) btn-bold(optional)'
+
+  Types: 'roundedFilled'
+         'roundedBordered'
+         'roundedNaked',
+         'rectFilled'
+
+  Sizes: 'xs'
+         'small'
+         'medium'
+         'large'
+         'xl'
+ */
+
+
+
+// Vars
+$btn-colors: (
+  green: $color-green,
+  blue: $color-blue,
+  pink: $color-pink,
+  red: $color-red,
+  black: $color-black,
+  grey-1: $color-grey-1,
+  white: $color-white,
+  grey2: $color-grey2,
+  sky-blue: $color-sky-blue,
+  casal-blue: $color-casal-blue,
+  picton-blue: $color-picton-blue,
+  turquoise-blue: $color-turquoise-blue,
+  cranberry: $color-cranberry,
+  purple-heart: $color-purple-heart,
+  dodger-blue: $color-dodger-blue,
+  electric-violet: $color-electric-violet,
+  burnt-orange: $color-burnt-orange,
+  tanned-orange: $color-tanned-orange,
+  puerto-green: $color-puerto-green,
+  marine-turquoise: $color-marine-turquoise,
+  silver: $color-silver,
+  gradient-picton-blue_turquoise-blue: $color-gradient-picton-blue_turquoise-blue,
+  gradient-cranberry_purple-heart: $color-gradient-cranberry_purple-heart,
+  gradient-dodger-blue_electric-violet: $color-gradient-dodger-blue_electric-violet,
+  gradient-burnt-orange_tanned-orange: $color-gradient-burnt-orange_tanned-orange,
+  gradient-puerto-green_marine-turquoise: $color-gradient-puerto-green_marine-turquoise,
+  gradient-gradient-grey-1_white: $color-gradient-gradient-grey-1_white,
+);
+
+
+
+
+
+
+$btn-transition: $transition;
+$btn-hover-contrast: 2;
+$btn-active-contrast: 5.5;
+$btn-gradient-hover-contrast: 10;
+$btn-gradient-active-contrast: 13;
+$btn-rounded: '300px';
+$btn-rect: '5px';
+
+
+@mixin btn__base() {
+  -webkit-appearance: none;
+  text-decoration: none;
+  color: #fff;
+  font-family: $font-wes;
+  font-weight: 300;
+  display: inline-block;
+  position: relative;
+  transition: $btn-transition;
+  overflow: hidden;
+  border:0;
+  cursor: pointer;
+  i {
+    width: auto;
+    height: auto;
+    line-height: 1;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  &:hover, &:active {
+    text-decoration: none;
+    outline:0;
+    color: #fff;
+  }
+
+  .rtl & {
+    font-family: $font-hebrew;
+  }
+}
+@mixin btn__sizes() {
+  &-xl {
+    padding: 14px 35px;
+    font-size: 22px;
+
+    @media (max-width: 992px) {
+      padding: 9px 25px;
+      font-size: 18px;
+    }
+  }
+  &-large {
+    padding: 17px 44px;
+    font-weight: 500;
+    font-size: 20px;
+    box-shadow: none;
+    outline: none;
+    line-height: normal;
+    letter-spacing: 0.833143px;
+    -webkit-font-smoothing: antialiased;
+
+    @media (max-width: 1199px) {
+      padding: 13.5px 28px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 17px 44px;
+      font-size: 20px;
+    }
+  }
+  &-medium {
+    padding: 14px 37px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    letter-spacing: 0.68px;
+    box-shadow: none;;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+  }
+  &-small {
+    padding: 6px 20px;
+    font-size: 16px;
+  }
+  &-xs {
+    padding: 3px 15px;
+    font-size: 14px;
+  }
+}
+@mixin btn__textColors() {
+  @each $key,$val in $btn-colors {
+    &-text-#{$key} {
+      color: #{$val} !important;
+    }
+  }
+}
+@mixin btn__bgColors() {
+  @each $key,$val in $btn-colors {
+    &-bg-#{$key} {
+      color: #{$val};
+    }
+  }
+}
+
+// TYPES
+@mixin btn__roundedFilled($color) {
+  @include btn__base();
+  @include btn__sizes();
+
+  $gradient: null;
+
+  // if is gradient
+  @if type-of($color) == map {
+    $gradient: $color;
+    $color: map-get($gradient, color1);
+  }
+
+
+  $box-shadow-color: $color;
+  $box-shadow-opacity: 0.56;
+
+  @if (lightness($color) > 80) {
+    $box-shadow-color: #000;
+    $box-shadow-opacity: 0.15;
+  }
+
+  border-radius: #{$btn-rounded};
+  background-color: $color;
+  box-shadow: 0 10px 34px -8px rgba($box-shadow-color, $box-shadow-opacity);
+
+  // gradient handle
+  @if ($gradient != null) {
+    background-image: linear-gradient(to right, map-get($gradient, color1), map-get($gradient, color2));
+  }
+
+  &:before {
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+  }
+  &.disabled {
+    background-color: map-get($btn-colors, grey);
+    box-shadow: none;
+    pointer-events: none;
+  }
+  // hover
+  &:not(.disabled):hover {
+    // background-color: darken($color, $btn-hover-contrast);
+    // box-shadow: 0 20px 34px -8px rgba($box-shadow-color, $box-shadow-opacity);
+    background-color: transparentize($color, 0.2);
+
+    // gradient handle
+    @if ($gradient != null) {
+      background-image: linear-gradient(to right, darken(map-get($gradient, color1), $btn-gradient-hover-contrast), darken(map-get($gradient, color2), $btn-gradient-hover-contrast));
+    }
+  }
+  // active
+  &:not(.disabled):active {
+    // background-color: darken($color, $btn-active-contrast);
+    // box-shadow: 0 20px 34px -8px rgba($box-shadow-color, $box-shadow-opacity);
+    background-color: transparentize($color, 0.2);
+
+    // gradient handle
+    @if ($gradient != null) {
+      background-image: linear-gradient(to right, darken(map-get($gradient, color1), $btn-gradient-active-contrast), darken(map-get($gradient, color2), $btn-gradient-active-contrast));
+    }
+  }
+}
+@mixin btn__roundedBordered($color) {
+  @include btn__base();
+  @include btn__sizes();
+
+
+  $gradient: null;
+
+  // if is gradient
+  @if type-of($color) == map {
+    $gradient: $color;
+    $color: map-get($gradient, color1);
+  }
+
+  $box-shadow-color: $color;
+  $box-shadow-opacity: 0.56;
+
+  @if (lightness($color) > 80) {
+    $box-shadow-color: #000;
+    $box-shadow-opacity: 0.15;
+  }
+
+
+  border-radius: #{$btn-rounded};
+  background-color: transparent;
+  color: #000;
+  border: 1px solid $color;
+
+  &.disabled {
+    background-color: map-get($btn-colors, grey);
+    box-shadow: none;
+    pointer-events: none;
+  }
+  // hover
+  &:not(.disabled):hover {
+    color: #fff;
+    background-color: darken($color, $btn-hover-contrast);
+    // gradient handle
+    @if ($gradient != null) {
+      background-image: linear-gradient(to right, darken(map-get($gradient, color1), $btn-gradient-hover-contrast), darken(map-get($gradient, color2), $btn-gradient-hover-contrast));
+    }
+  }
+  // active
+  &:not(.disabled):active {
+    color: #fff;
+    background-color: darken($color, $btn-active-contrast);
+    // gradient handle
+    @if ($gradient != null) {
+      background-image: linear-gradient(to right, darken(map-get($gradient, color1), $btn-gradient-active-contrast), darken(map-get($gradient, color2), $btn-gradient-active-contrast));
+    }
+  }
+}
+@mixin btn__roundedNaked($color) {
+  @include btn__base();
+  @include btn__sizes();
+
+  $gradient: null;
+
+  // if is gradient
+  @if type-of($color) == map {
+    $gradient: $color;
+    $color: map-get($gradient, color1);
+  }
+
+  $box-shadow-color: $color;
+  $box-shadow-opacity: 0.56;
+
+  @if (lightness($color) > 80) {
+    $box-shadow-color: #000;
+    $box-shadow-opacity: 0.15;
+  }
+
+  border-radius: #{$btn-rounded};
+  background-color: transparent;
+  color: $color;
+  &.disabled {
+    background-color: map-get($btn-colors, grey);
+    box-shadow: none;
+    pointer-events: none;
+    color: #fff;
+  }
+  // hover
+  &:not(.disabled):hover {
+    color: $color;
+    background-color: lighten(#f4f4f4, $btn-hover-contrast);
+  }
+  // active
+  &:not(.disabled):active {
+    color: $color;
+    background-color: darken(#f4f4f4, $btn-active-contrast);
+    // box-shadow: 0 2px 8px 0 rgba(#f4f4f4, 0.3), 0 3px 7px 0 rgba(#f4f4f4, 0.3);
+  }
+}
+@mixin btn__rectFilled($color) {
+  @include btn__base();
+  @include btn__sizes();
+
+  $gradient: null;
+
+  // if is gradient
+  @if type-of($color) == map {
+    $gradient: $color;
+    $color: map-get($gradient, color1);
+  }
+
+  $box-shadow-color: $color;
+  $box-shadow-opacity: 0.56;
+
+  @if (lightness($color) > 80) {
+    $box-shadow-color: #000;
+    $box-shadow-opacity: 0.15;
+  }
+
+  border-radius: #{$btn-rect};
+  background-color: $color;
+  box-shadow: 0 10px 34px -8px rgba($box-shadow-color, $box-shadow-opacity);
+
+  // gradient handle
+  @if ($gradient != null) {
+    background-image: linear-gradient(to right, map-get($gradient, color1), map-get($gradient, color2));
+  }
+  &.disabled {
+    background-color: map-get($btn-colors, grey);
+    box-shadow: none;
+    pointer-events: none;
+  }
+  // hover
+  &:not(.disabled):hover {
+    background-color: lighten($color, $btn-hover-contrast);
+    // box-shadow: 0 20px 34px -8px rgba($box-shadow-color, $box-shadow-opacity);
+
+    // gradient handle
+    @if ($gradient != null) {
+      background-image: linear-gradient(to right, darken(map-get($gradient, color1), $btn-gradient-hover-contrast), darken(map-get($gradient, color2), $btn-gradient-hover-contrast));
+    }
+  }
+  // active
+  &:not(.disabled):active {
+    background-color: darken($color, $btn-active-contrast);
+    // box-shadow: 0 20px 34px -8px rgba($box-shadow-color, $box-shadow-opacity);
+
+    // gradient handle
+    @if ($gradient != null) {
+      background-image: linear-gradient(to right, darken(map-get($gradient, color1), $btn-gradient-active-contrast), darken(map-get($gradient, color2), $btn-gradient-active-contrast));
+    }
+  }
+}
+
+
+
+// Generate buttons
+.btn {
+
+  // TYPES
+  &-roundedFilled {
+    @each $key,$val in $btn-colors {
+      &-#{$key} {
+        @include btn__roundedFilled($val);
+      }
+    }
+  }
+  &-roundedBordered {
+    @each $key,$val in $btn-colors {
+      &-#{$key} {
+        @include btn__roundedBordered($val);
+      }
+    }
+  }
+  &-roundedNaked {
+    @each $key,$val in $btn-colors {
+      &-#{$key} {
+        @include btn__roundedNaked($val);
+      }
+    }
+  }
+  &-rectFilled {
+    @each $key,$val in $btn-colors {
+      &-#{$key} {
+        @include btn__rectFilled($val);
+      }
+    }
+  }
+
+  // SIZES
+  @include btn__sizes();
+
+  // TEXT COLORS
+  @include btn__textColors();
+
+  // BG COLORS
+  @include btn__bgColors();
+
+  // TEXT WEIGHTS
+  &-bold {
+    font-weight: 500;
+  }
+}
+

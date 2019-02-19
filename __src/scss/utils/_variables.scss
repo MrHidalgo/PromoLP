@@ -1,0 +1,70 @@
+/**
+ * Variables
+ */
+
+
+// Font Family
+$font-montserrat: 'Montserrat', sans-serif;
+$font-roboto: 'Roboto', sans-serif;
+$font-hebrew: 'Assistant', sans-serif;
+$font-wes: 'Wes FY', sans-serif;
+
+
+// General Colors
+$color-green: #1ab889;
+$color-blue: #4a90e2;
+$color-red: #f26072;
+$color-black: #000000;
+$color-grey-1: #FAFBFC;
+$color-white: #FFFFFF;
+$color-grey2: #1ab889;
+$color-grey-lp: #c9cbce;
+$color-grey-lp2: #dbdbdb;
+$color-grey-lp-bg: #f6f6f6;
+$color-sky-blue: #4ab3e2;
+$color-casal-blue: #2f5b6d;
+$color-ocean-blue: #2195f2;
+$color-sun-yellow: #fec006;
+$color-grass-green: #7acd7d;
+$color-gum-pink: #ec5f8f;
+$color-pink: #f84b74;
+$color-pink-lp: #ff3366;
+$color-berry-purple: #5b5bca;
+
+// Gradients end colors
+$color-picton-blue: #34b0f4;
+$color-picton-blue2: #3ec8e5;
+$color-turquoise-blue: #4de4db;
+$color-cranberry: #df487b;
+$color-purple-heart: #a832c2;
+$color-dodger-blue: #3b7dff;
+$color-electric-violet: #683aff;
+$color-burnt-orange: #e86753;
+$color-tanned-orange: #f68d61;
+$color-puerto-green: #4fcac0;
+$color-marine-turquoise: #39e3b3;
+
+// Light Colors
+$color-light-blue: #e8f4fd;
+$color-light-yellow: #fef8e6;
+$color-light-green: #eef9ee;
+$color-light-red: #fdeff3;
+$color-light-purple: #efeffd;
+
+$color-charleston-green: #282828;
+$color-davy-grey: #575757;
+$color-platinum: #e8e8e8;
+$color-silver: #cdcdcd;
+
+// Gradients
+$color-gradient-picton-blue_turquoise-blue: (default: $color-picton-blue, color1: $color-picton-blue, color2: $color-turquoise-blue);
+$color-gradient-cranberry_purple-heart: (default: $color-cranberry, color1: $color-cranberry, color2: $color-purple-heart);
+$color-gradient-dodger-blue_electric-violet: (default: $color-dodger-blue, color1: $color-dodger-blue, color2: $color-electric-violet);
+$color-gradient-burnt-orange_tanned-orange: (default: $color-burnt-orange, color1: $color-burnt-orange, color2: $color-tanned-orange);
+$color-gradient-puerto-green_marine-turquoise: (default: $color-puerto-green, color1: $color-puerto-green, color2: $color-marine-turquoise);
+$color-gradient-gradient-grey-1_white: (default: $color-grey-1, color1: $color-grey-1, color2: $color-white);
+
+
+// Animation
+$transition: .25s;
+

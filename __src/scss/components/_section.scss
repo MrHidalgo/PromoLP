@@ -1,0 +1,69 @@
+// Section
+
+.section {
+  font-family: $font-wes;
+
+  .rtl & {
+    font-family: $font-hebrew;
+  }
+
+  &__title {
+    color: $color-black;
+    font-size: 48px;
+    line-height: 1.33;
+    font-weight: 400;
+    @media (max-width: 1600px) {
+      font-size: 45px;
+    }
+    @media (max-width: 1440px) {
+      font-size: 40px;
+    }
+    @media (max-width: 1250px) {
+      font-size: 30px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 28px;
+    }
+  }
+  &__text {
+    color: $color-black;
+    line-height: 1.33;
+    font-size: 24px;
+    font-weight: 400;
+    @media (max-width: 1600px) {
+      font-size: 22px;
+    }
+    @media (max-width: 1440px) {
+      font-size: 20px;
+    }
+    @media (max-width: 1250px) {
+      font-size: 18px;
+      line-height:1.44;
+    }
+    @media (max-width: 1000px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  &__container {
+    max-width: 1560px;
+    margin-right: auto;
+    margin-left: auto;
+    @media (max-width: 1600px) {
+      max-width: 1400px;
+    }
+    @media (max-width: 1440px) {
+      max-width: 1200px;
+    }
+    @media (max-width: 1250px) {
+      max-width: 985px;
+    }
+    @media (max-width: 1000px) {
+      max-width: 750px;
+    }
+    @media (max-width: 767px) {
+      max-width: 500px;
+      width: calc(100% - 40px);
+    }
+  }
+}
