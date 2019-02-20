@@ -89,7 +89,7 @@ gulp.task( 'browser-sync', function () {
 				]
 			}
 		},
-		// startPath: "/lp2.html",
+		startPath: "/lp2.html",
 		port: 3000,
 		// logLevel: 'info',
 		// logConnections: false,
