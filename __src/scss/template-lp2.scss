@@ -3,6 +3,10 @@
  */
 @import 'utils/all';
 
+@function line-height-convert($unit, $fontSize) {
+  @return ($unit / $fontSize);
+}
+
 html,
 body {
   width: 100%;
@@ -31,19 +35,17 @@ body {
       background-image: url('../images/templates/lp2/img-lpCover-bg.svg');
       background-repeat: no-repeat;
       background-size: contain;
-      background-position-x: 100%;
-      background-position-y: -25px;
+      background-position-x: calc(100% + 25px);
+      background-position-y: -20px;
       @media screen and (max-width: 1600px) {
-        background-position-x: calc(100% + 50px);
-      }
-      @media screen and (max-width: 1440px) {
-        background-position-x: calc(100% + 115px);
+        background-position-x: calc(100% + 90px);
       }
       @media screen and (max-width: 1366px) {
-        background-position-x: calc(100% + 135px);
+        background-position-y: -12px;
+        background-position-x: calc(100% + 25px);
       }
       @media screen and (max-width: 1280px) {
-        background-position-x: calc(100% + 175px);
+        background-position-x: calc(100% + 155px);
       }
       @media screen and (max-height: 589px) {
         background-position-x: 100%;
@@ -146,7 +148,6 @@ body {
       top: 75px;
       left: 75px;
       display: flex;
-
       @media screen and (max-width: 1440px) and (max-height: 900px) {
         top: 68px;
         left: 68px;
@@ -162,10 +163,7 @@ body {
         left: 48px;
       }
       @media screen and (max-height: 799px) {
-        top: 48px;
-      }
-      @media screen and (max-height: 699px) {
-        top: 27px;
+        top: 24px;
       }
       @media screen and (max-height: 649px) {
         top: 15px;
@@ -191,10 +189,11 @@ body {
       font-size: 64px;
       font-weight: 900;
       letter-spacing: 0.43px;
-      line-height: 1.25;
+      line-height: line-height-convert(88,64);
       @media screen and (max-width: 1600px) and (min-height: 900px) {
         padding-bottom: 24px;
         font-size: 52px;
+        line-height: line-height-convert(70,52);
       }
       @media screen and (max-width: 1366px) and (min-height: 900px) {
         font-size: 42px;
@@ -202,20 +201,24 @@ body {
       @media screen and (max-height: 899px) {
         padding-bottom: 24px;
         font-size: 52px;
+        line-height: line-height-convert(70,52);
       }
       @media screen and (max-height: 767px) {
         font-size: 42px;
+        line-height: line-height-convert(60,42);
       }
       @media screen and (max-width: 1200px) and (max-height: 799px) {
         font-size: 42px;
+        line-height: line-height-convert(60,42);
       }
       @media screen and (max-width: 991px) and (max-height: 1024px) {
-        font-size: 42px;
         padding-bottom: 24px;
+        font-size: 42px;
       }
       @media screen and (max-width: 767px) and (min-height: 0px) {
         padding-bottom: 11px;
         font-size: 28px;
+        line-height: line-height-convert(46,28);
       }
       @media screen and (max-width: 991px) {
         text-align: center;
@@ -228,14 +231,16 @@ body {
       color: #000000;
       font-size: 34px;
       font-weight: 500;
-      line-height: 1.4;
+      line-height: line-height-convert(54,34);
       @media screen and (max-width: 1440px) and (max-height: 900px) {
         padding-bottom: 37px;
         font-size: 28px;
+        line-height: line-height-convert(43,28);
       }
       @media screen and (max-width: 1600px) and (min-height: 900px) {
         padding-bottom: 37px;
         font-size: 28px;
+        line-height: line-height-convert(43,28);
       }
       @media screen and (max-width: 1366px) and (min-height: 900px) {
         font-size: 24px;
@@ -243,6 +248,7 @@ body {
       @media screen and (max-height: 899px) {
         padding-bottom: 37px;
         font-size: 28px;
+        line-height: line-height-convert(43,28);
       }
       @media screen and (max-height: 767px) {
         font-size: 24px;
@@ -251,8 +257,9 @@ body {
         font-size: 24px;
       }
       @media screen and (max-width: 991px) and (max-height: 1024px) {
-        font-size: 28px;
         padding-bottom: 37px;
+        font-size: 28px;
+        line-height: line-height-convert(43,28);
       }
       @media screen and (max-width: 767px) and (min-height: 0px) {
         padding-bottom: 16px;
@@ -287,6 +294,9 @@ body {
       }
       @media screen and (max-width: 767px) and (min-height: 0px) {
         padding-bottom: 16px;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
 
         button {
           width: 100%;
@@ -302,7 +312,6 @@ body {
       flex-direction: column;
       margin: 0;
       padding: 0;
-
       @media screen and (max-width: 767px) {
         display: none;
       }
@@ -385,6 +394,9 @@ body {
     &-video {
       display: flex;
       padding-top: 50px;
+      @media screen and (max-width: 991px) {
+        padding-top: 25px;
+      }
       @media screen and (max-height: 589px) {
         padding-top: 25px;
       }
@@ -422,14 +434,27 @@ body {
 
       &-wrapper {
         position: relative;
-        width: 720px;
+        top: 35px;
+        left: -32px;
+        @media screen and (max-width: 1919px) {
+          width: 750px;
+        }
         @media screen and (max-width: 1599px) {
-          width: 670px;
+          width: 690px;
         }
         @media screen and (max-width: 1439px) {
-          width: 540px;
+          top: 12px;
+          left: -17px;
+          width: 650px;
+        }
+        @media screen and (max-width: 1365px) {
+          top: 28px;
+          left: -21px;
+          width: 620px;
         }
         @media screen and (max-width: 1199px) {
+          top: 0;
+          left: 0;
           width: 450px;
         }
         @media screen and (max-width: 575px) {
@@ -452,25 +477,36 @@ body {
         position: absolute;
         top: 25px;
         left: 86px;
-        width: 551px;
-        height: 331px;
+        width: 680px;
+        height: 400px;
+        @media screen and (max-width: 1919px) {
+          width: 580px;
+          height: 350px;
+        }
         @media screen and (max-width: 1599px) {
           top: 23px;
           left: 78px;
-          width: 513px;
-          height: 310px;
+          width: 530px;
+          height: 320px;
         }
         @media screen and (max-width: 1439px) {
           top: 18px;
           left: 63px;
-          width: 414px;
-          height: 248px;
+          width: 515px;
+          height: 310px;
+        }
+        @media screen and (max-width: 1365px) {
+          width: 490px;
+          height: 290px;
         }
         @media screen and (max-width: 1199px) {
           top: 16px;
           left: 52px;
           width: 346px;
           height: 206px;
+        }
+        @media screen and (max-width: 767px) and (min-height: 0px){
+          display: none;
         }
       }
 
