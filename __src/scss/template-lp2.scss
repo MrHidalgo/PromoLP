@@ -84,10 +84,11 @@ body {
       align-items: center;
     }
     @media screen and (max-width: 767px) {
+      align-items: flex-start;
       background-image: url('../images/templates/lp2/img-lpCover-bg-mobile.svg');
       background-repeat: no-repeat;
       background-size: auto;
-      background-position-y: calc(100% + 100px);
+      background-position-y: 300px;
       background-position-x: right;
     }
 
@@ -126,6 +127,9 @@ body {
       @media screen and (max-height: 630px) {
         padding-top: 75px;
         padding-bottom: 75px;
+      }
+      @media screen and (max-width: 767px) and (min-height: 0) {
+        padding-bottom: 15px;
       }
 
 
@@ -235,6 +239,10 @@ body {
         padding-bottom: 11px;
         font-size: 28px;
         line-height: line-height-convert(36,28);
+
+        br {
+          display: none;
+        }
       }
       @media screen and (max-width: 991px) {
         text-align: center;
@@ -430,6 +438,7 @@ body {
 
       &--mobile {
         display: none;
+        z-index: -1;
         position: absolute;
         top: 16px;
         left: 52px;
@@ -447,8 +456,8 @@ body {
         @media screen and (max-width: 424px) {
           top: 9px;
           left: 33px;
-          width: 224px;
-          height: 135px;
+          width: 243px;
+          height: 145px;
         }
       }
 
@@ -485,7 +494,7 @@ body {
           width: 400px;
         }
         @media screen and (max-width: 424px) {
-          width: 290px;
+          width: 310px;
         }
 
         .lp2-cover-video--pc {
